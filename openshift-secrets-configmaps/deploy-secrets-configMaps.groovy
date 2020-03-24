@@ -2,8 +2,8 @@ pipeline {
 
     agent any
     parameters {
-    	string(defaultValue: 'ketan.chhatbar', name: 'openShiftCredentialsId')
-    	string(defaultValue: 'https://console.starter-us-west-2.openshift.com', name: 'openShiftURL')
+    	string(defaultValue: 'openShiftCredentialsId', name: 'openShiftCredentialsId')
+    	string(defaultValue: 'https://api.us-west-1.starter.openshift-online.com:6443', name: 'openShiftURL')
     	string(defaultValue: 'deployments', name: 'deploymentsFileId')
     }
     stages {
