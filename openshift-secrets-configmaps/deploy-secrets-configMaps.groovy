@@ -27,7 +27,7 @@ pipeline {
                         	echo "echo environment = ${envr}"
                         	for(String namespace : namespaces) {
                                 sh "${ocDir}/oc project ${namespace}"
-                        		def FILES_LIST = sh (script: "ls ./${envr}/configMaps", returnStdout: true).trim()
+                        		def FILES_LIST = sh (script: "ls ./openshift-secrets-configmaps/${envr}/configMaps", returnStdout: true).trim()
                         		for(String ele : FILES_LIST.split("\\r?\\n")) { 
                         			try {
                         				sh "${ocDir}/oc delete configmap ${ele}"
@@ -58,7 +58,7 @@ pipeline {
                         	echo "echo environment = ${envr}"
                         	for(String namespace : namespaces) {
                                 sh "${ocDir}/oc project ${namespace}"
-                        		def FILES_LIST = sh (script: "ls ./${envr}/secrets", returnStdout: true).trim()
+                        		def FILES_LIST = sh (script: "ls ./openshift-secrets-configmaps/${envr}/secrets", returnStdout: true).trim()
                         		for(String ele : FILES_LIST.split("\\r?\\n")) { 
                         			try {
                         				sh "${ocDir}/oc delete secret ${ele}"
