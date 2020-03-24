@@ -2,7 +2,7 @@ pipeline {
 
     agent any
     parameters {
-    	string(defaultValue: 'ashwin-openshift', name: 'openShiftCredentialsId')
+    	string(defaultValue: 'ketan.chhatbar', name: 'openShiftCredentialsId')
     	string(defaultValue: 'https://console.starter-us-west-2.openshift.com', name: 'openShiftURL')
     	string(defaultValue: 'deployments', name: 'deploymentsFileId')
     }
